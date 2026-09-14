@@ -81,16 +81,11 @@
 
     <!-- featured -->
     <article class="p-feature">
-      <div class="codewin">
-        <div class="codebar"><i></i><i></i><i></i><span>recepia / router.ts</span></div>
-<pre><span class="c-com">// un router, cinco flujos por clínica</span>
-<span class="c-key">const</span> intent = <span class="c-key">await</span> <span class="c-fn">clasificar</span>(msg.text, tenant.contexto)
-
-<span class="c-key">switch</span> (intent) {
-  <span class="c-key">case</span> <span class="c-str">"turno.nuevo"</span>: <span class="c-key">return</span> <span class="c-fn">run</span>(<span class="c-str">"wf01-agendar"</span>, ctx)
-  <span class="c-key">case</span> <span class="c-str">"urgencia"</span>:    <span class="c-key">return</span> <span class="c-fn">derivar</span>(tenant.guardia)
-  <span class="c-key">default</span>:            <span class="c-key">return</span> <span class="c-fn">run</span>(<span class="c-str">"wf05-fallback"</span>, ctx)
-}</pre>
+      <div class="phone">
+        <div class="msg them" data-en="Do you have an appointment for tomorrow afternoon?">¿Tienen turno para mañana a la tarde?</div>
+        <div class="msg us" data-en="I have 4:30pm and 6pm with Dr. Sosa. Which works for you?">Tengo 16:30 y 18:00 con la Dra. Sosa. ¿Cuál te sirve?</div>
+        <div class="msg them" data-en="6pm works">18 está bien</div>
+        <div class="msg us" data-en="Done, it's booked. I'll send you a reminder two hours before.">Listo, agendado. Te mando un recordatorio dos horas antes.</div>
       </div>
       <div class="pbody">
         <span class="ptag" data-en="Own product · chat & voice">Producto propio · chat y voz</span>
