@@ -15,8 +15,21 @@
       var i=Array.prototype.indexOf.call(ents,en.target);
       items.forEach(function(li,j){li.classList.toggle('on',j===i)});
     });
-  },{rootMargin:'-30% 0px -55% 0px'});
+  },{rootMargin:'-50% 0px -50% 0px'});
   ents.forEach(function(e){io.observe(e)});
+})();
+(function(){
+  var form=document.getElementById('contactForm');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nombre=document.getElementById('n').value.trim();
+    var email=document.getElementById('e').value.trim();
+    var msg=document.getElementById('m').value.trim();
+    var subject='Contacto desde el portfolio - '+nombre;
+    var body='Nombre: '+nombre+'\nEmail: '+email+'\n\n'+msg;
+    window.location.href='mailto:ssimonmarconi@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
 })();
 function openCert(imgId){
   var src=document.getElementById(imgId).getAttribute('src');

@@ -47,8 +47,8 @@
       <a class="pill" href="#contacto">Escribime</a>
     </div>
     <div class="row" style="margin-top:1.1rem">
-      <a class="chip" href="#">GitHub</a>
-      <a class="chip" href="#">LinkedIn</a>
+      <a class="chip" href="https://github.com/SMsimarco" target="_blank" rel="noopener">GitHub</a>
+      <a class="chip" href="https://www.linkedin.com/in/simonmarco0" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </header>
@@ -59,7 +59,7 @@
       <span class="mono">Probalo ahora</span>
       <h3 class="ser">El agente que atiende este sitio es el mismo que construyo para clientes.</h3>
       <p class="t">Preguntale lo que quieras. Entiende contexto, consulta disponibilidad real y deja el turno agendado. No es una demo: es la pieza que hoy corre en producción.</p>
-      <div class="row" style="margin-top:2rem"><a class="pill solid" href="#">Abrir el chat</a></div>
+      <div class="row" style="margin-top:2rem"><a class="pill solid" href="https://cal.com/simon-marconi-c1nu1d/demo-recepia-15-min" target="_blank" rel="noopener">Abrir el chat</a></div>
     </div>
     <div class="phone">
       <div class="msg them">¿Tienen turno para mañana a la tarde?</div>
@@ -158,7 +158,6 @@ plan = claude.messages.<span class="c-fn">create</span>(
         <p class="pdesc">Prospección comercial de punta a punta, operada desde Telegram. Cinco flujos encadenados.</p>
         <div class="pstats"><div><b>5</b><span>flujos</span></div></div>
         <p class="ptech">n8n · Telegram Bot API · Claude API</p>
-        <div class="pactions"><a class="pill solid" href="#">Ver sitio</a><a class="pill" href="#">Ver código</a></div>
       </article>
 
       <article class="pcard archived">
@@ -171,11 +170,12 @@ viajes.<span class="c-fn">where</span>((v) =>
   (v.fecha.<span class="c-fn">difference</span>(mio.fecha).inHours).<span class="c-fn">abs</span>() < <span class="c-str">2</span>
 )</pre>
         </div>
-        <span class="award">Segundo puesto en Ecoemprende</span>
+        <img id="cert-img-viajemos" src="img/cert-viajemos-ecoemprende.webp" alt="Certificado de segundo puesto en Concurso EconEmprende 2026, categoría Idea/proyecto de negocio, para Viajemos" style="display:none">
+        <button type="button" class="award" onclick="openCert('cert-img-viajemos')" style="background:none;cursor:pointer">Segundo puesto en Ecoemprende</button>
         <h3 class="ptitle">Viajemos</h3>
         <p class="pdesc">Viajes compartidos entre estudiantes. Archivado tras evaluar con abogados las barreras legales del modelo.</p>
         <p class="ptech">Flutter · Dart · Supabase</p>
-        <div class="pactions"><a class="pill" href="#">Ver sitio</a><a class="pill" href="https://github.com/AlejoRau/Viajemos" target="_blank" rel="noopener">Ver código</a></div>
+        <div class="pactions"><a class="pill" href="https://github.com/AlejoRau/Viajemos" target="_blank" rel="noopener">Ver código</a></div>
       </article>
 
       <article class="pcard">
@@ -365,13 +365,15 @@ viajes.<span class="c-fn">where</span>((v) =>
       <span class="mono">Contacto</span>
       <h2 class="ser">Contame qué parte del día se te va en tareas repetidas.</h2>
       <p class="lead">Si hay algo para automatizar, te lo digo. Si no lo hay, también. La primera conversación no se cobra y no dura más de media hora.</p>
-      <div class="row" style="margin-top:2rem"><a class="pill" href="#">WhatsApp</a><a class="pill" href="#">Email</a></div>
+      <div class="row" style="margin-top:2rem"><a class="pill" href="mailto:ssimonmarconi@gmail.com">Email</a></div>
     </div>
     <div>
-      <div class="field"><label for="n">Nombre</label><input id="n" type="text"></div>
-      <div class="field"><label for="e">Email</label><input id="e" type="email"></div>
-      <div class="field"><label for="m">Qué necesitás</label><textarea id="m" placeholder="Cargamos los pedidos a mano en una planilla y se nos pasan."></textarea></div>
-      <a class="pill solid" href="#">Enviar mensaje</a>
+      <form id="contactForm">
+        <div class="field"><label for="n">Nombre</label><input id="n" type="text" required></div>
+        <div class="field"><label for="e">Email</label><input id="e" type="email" required></div>
+        <div class="field"><label for="m">Qué necesitás</label><textarea id="m" placeholder="Cargamos los pedidos a mano en una planilla y se nos pasan." required></textarea></div>
+        <button type="submit" class="pill solid">Enviar mensaje</button>
+      </form>
     </div>
   </div>
 </section>
@@ -379,7 +381,7 @@ viajes.<span class="c-fn">where</span>((v) =>
 <footer>
   <div class="wrap foot">
     <span>2026 / Simón Marconi / Automatización con IA</span>
-    <span><a href="#">GitHub</a> &nbsp; <a href="#">LinkedIn</a> &nbsp; <a href="#">Currículum</a></span>
+    <span><a href="https://github.com/SMsimarco" target="_blank" rel="noopener">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/simonmarco0" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a href="https://www.linkedin.com/in/simonmarco0" target="_blank" rel="noopener">Currículum</a></span>
   </div>
 </footer>
 
