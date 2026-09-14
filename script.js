@@ -31,6 +31,40 @@
     window.location.href='mailto:ssimonmarconi@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
 })();
+(function(){
+  var root=document.documentElement;
+  var btn=document.getElementById('themeToggle');
+  if(localStorage.getItem('theme')==='light') root.setAttribute('data-theme','light');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var isLight=root.getAttribute('data-theme')==='light';
+    if(isLight){ root.removeAttribute('data-theme'); localStorage.setItem('theme','dark'); }
+    else{ root.setAttribute('data-theme','light'); localStorage.setItem('theme','light'); }
+  });
+})();
+(function(){
+  var root=document.documentElement;
+  var toggle=document.getElementById('langToggle');
+  function applyLang(lang){
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(el.dataset.es===undefined) el.dataset.es=el.textContent;
+      el.textContent = lang==='en' ? el.dataset.en : el.dataset.es;
+    });
+    document.querySelectorAll('[data-en-placeholder]').forEach(function(el){
+      if(el.dataset.esPlaceholder===undefined) el.dataset.esPlaceholder=el.getAttribute('placeholder')||'';
+      el.setAttribute('placeholder', lang==='en' ? el.dataset.enPlaceholder : el.dataset.esPlaceholder);
+    });
+    root.setAttribute('lang', lang);
+    if(toggle) toggle.innerHTML = lang==='en' ? 'ES / <b>EN</b>' : '<b>ES</b> / EN';
+    localStorage.setItem('lang', lang);
+  }
+  if(toggle){
+    toggle.addEventListener('click',function(){
+      applyLang(root.getAttribute('lang')==='en' ? 'es' : 'en');
+    });
+  }
+  applyLang(localStorage.getItem('lang') || 'es');
+})();
 function openCert(imgId){
   var src=document.getElementById(imgId).getAttribute('src');
   document.getElementById('certModalImg').setAttribute('src',src);
