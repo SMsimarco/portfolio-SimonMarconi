@@ -155,10 +155,8 @@
 
       <article class="pcard">
         <div class="codewin">
-          <div class="codebar"><i></i><i></i><i></i><span>foco / foquito.js</span></div>
-<pre><span class="c-com">// "mañana a las 9, dentista" se vuelve una tarea</span>
-<span class="c-key">const</span> tarea = <span class="c-key">await</span> haiku.<span class="c-fn">interpretar</span>(texto ?? <span class="c-fn">transcribir</span>(audio))
-<span class="c-key">await</span> supabase.from(<span class="c-str">"tareas"</span>).<span class="c-fn">insert</span>(tarea)</pre>
+          <div class="codebar"><i></i><i></i><i></i></div>
+          <img src="img/foco-logo.webp" alt="Foquito, el chatbot con IA de foco." style="display:block;width:100%;height:auto">
         </div>
         <span class="ptag" data-en="Own product · PWA">Producto propio · PWA</span>
         <h3 class="ptitle">foco.</h3>
@@ -169,11 +167,8 @@
 
       <article class="pcard">
         <div class="codewin">
-          <div class="codebar"><i></i><i></i><i></i><span>gastos / audio.ts</span></div>
-<pre><span class="c-com">// nota de voz de Telegram -> gasto cargado</span>
-<span class="c-key">const</span> texto = <span class="c-key">await</span> gemini.<span class="c-fn">transcribir</span>(nota.ogg)
-<span class="c-key">const</span> gasto = <span class="c-key">await</span> gemini.<span class="c-fn">extraer</span>(texto)
-<span class="c-key">await</span> supabase.from(<span class="c-str">"gastos"</span>).<span class="c-fn">insert</span>(gasto)</pre>
+          <div class="codebar"><i></i><i></i><i></i></div>
+          <img src="img/gastos-logo.webp" alt="Gastos: tus finanzas al día" style="display:block;width:100%;height:auto">
         </div>
         <span class="ptag" data-en="Own product · personal use">Producto propio · uso personal</span>
         <h3 class="ptitle">Gastos por voz</h3>
