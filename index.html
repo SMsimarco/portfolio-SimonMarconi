@@ -109,15 +109,8 @@
 
       <article class="pcard">
         <div class="codewin">
-          <div class="codebar"><i></i><i></i><i></i><span>cenit / rutina.py</span></div>
-<pre><span class="c-com"># rutina + PDF imprimible</span>
-plan = claude.messages.<span class="c-fn">create</span>(
-  model=<span class="c-str">"claude-opus-5"</span>,
-  messages=[{<span class="c-str">"role"</span>: <span class="c-str">"user"</span>, <span class="c-str">"content"</span>: json.<span class="c-fn">dumps</span>({
-    <span class="c-str">"objetivo"</span>: socio.objetivo, <span class="c-str">"nivel"</span>: socio.nivel,
-  })}],
-)
-<span class="c-fn">render_pdf</span>(plan, socio)</pre>
+          <div class="codebar"><i></i><i></i><i></i><span>cenit / dashboard</span></div>
+          <img src="img/dashboard-cenit.webp" alt="Dashboard del sistema CENIT: entradas del día, socios activos, hora pico y cuotas al día" style="display:block;width:100%;height:auto">
         </div>
         <span class="ptag" data-en="Client · in production">Cliente · en producción</span>
         <h3 class="ptitle">Gimnasio CENIT</h3>
