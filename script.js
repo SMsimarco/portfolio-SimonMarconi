@@ -22,7 +22,6 @@
   var body=document.getElementById('waBody'),demo=document.getElementById('waDemo');
   if(!body||!demo)return;
   var msgs=[
-    {w:'bot',t:'¡Hola Simón! ¿En qué te puedo ayudar?'},
     {w:'user',t:'Quiero un turno para una limpieza dental mañana'},
     {w:'bot',t:'Perfecto, dejame revisar la disponibilidad… Tengo libres 09:45 · 10:30 · 11:15'},
     {w:'user',t:'10:30 me viene perfecto'},
