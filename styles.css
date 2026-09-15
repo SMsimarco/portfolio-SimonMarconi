@@ -85,7 +85,7 @@ a{color:inherit;text-decoration:none}
 .hero-img::before{content:"";position:absolute;inset:0;
   background:radial-gradient(ellipse 55% 65% at 74% 42%,var(--hero-glow),transparent 68%)}
 .hero-img::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(21,16,13,.92) 8%,rgba(21,16,13,.72) 42%,rgba(21,16,13,.4) 100%)}
+  background:linear-gradient(90deg,rgba(21,16,13,.95) 8%,rgba(21,16,13,.85) 48%,rgba(21,16,13,.6) 100%)}
 .hero-in h1,.hero-in .role,.hero-in .bio,.hero-in .fact b{color:#F2EBE2}
 .hero-in .mono{color:rgba(242,235,226,.62)}
 .hero-in .pill{color:#F2EBE2;border-color:rgba(242,235,226,.35)}
@@ -180,6 +180,9 @@ a{color:inherit;text-decoration:none}
 .award-inline:hover{background:var(--acc);color:#1B1210}
 
 .ptitle{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-.01em;font-size:1.35rem;margin-bottom:.6rem}
+.pstat{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.7rem}
+.pstat b{font-family:var(--serif);font-weight:400;font-size:1.5rem;color:var(--acc-ink)}
+.pstat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .pdesc{color:var(--soft);font-size:.9rem;line-height:1.55;margin-bottom:.9rem;
   min-height:4.19rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
 .ptech{font-family:var(--mono);font-size:.63rem;letter-spacing:.07em;color:var(--faint);margin-bottom:1rem}
