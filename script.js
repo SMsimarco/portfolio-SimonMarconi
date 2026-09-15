@@ -41,7 +41,10 @@
     }
     var i=0;
     function step(){
-      if(i>=msgs.length)return;
+      if(i>=msgs.length){
+        setTimeout(function(){ body.innerHTML=''; i=0; step(); },3000);
+        return;
+      }
       var m=msgs[i];
       var typ=document.createElement('div');
       typ.className='wa-typing'; typ.innerHTML='<i></i><i></i><i></i>';
@@ -51,7 +54,7 @@
         var el=document.createElement('div');
         el.className='wa-msg '+m.w; el.textContent=m.t; body.appendChild(el);
         body.scrollTop=body.scrollHeight;
-        i++; setTimeout(step,i<msgs.length?450:0);
+        i++; setTimeout(step,450);
       },650+Math.random()*350);
     }
     step();
