@@ -67,63 +67,18 @@
   }
 })();
 (function(){
-  var canvas=document.getElementById('flowCanvas'),inner=document.getElementById('canvasInner'),
-    svg=document.getElementById('canvasSvg'),hint=document.getElementById('canvasHint'),
-    resetBtn=document.getElementById('canvasReset');
-  if(!canvas||!inner||!svg)return;
-
-  function drawConnectors(){
-    var nodes=inner.querySelectorAll('.cn');
-    if(!nodes.length)return;
-    var innerRect=inner.getBoundingClientRect();
-    var w=inner.scrollWidth,h=inner.clientHeight;
-    svg.setAttribute('width',w); svg.setAttribute('height',h);
-    var paths='';
-    for(var i=0;i<nodes.length-1;i++){
-      var a=nodes[i],b=nodes[i+1];
-      var ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();
-      var x1=ra.right-innerRect.left, y1=ra.top-innerRect.top+ra.height/2;
-      var x2=rb.left-innerRect.left, y2=rb.top-innerRect.top+rb.height/2;
-      var mx=(x1+x2)/2;
-      var cls=b.classList.contains('live')?'live':(b.classList.contains('product')?'product':'');
-      paths+='<path class="'+cls+'" d="M'+x1+','+y1+' C'+mx+','+y1+' '+mx+','+y2+' '+x2+','+y2+'"></path>';
-    }
-    svg.innerHTML=paths;
+  var cards=document.querySelectorAll('.pstack-card');
+  if(!cards.length)return;
+  if(!('IntersectionObserver' in window)){
+    cards.forEach(function(c){c.classList.add('in')});
+    return;
   }
-
-  function hideHint(){ if(hint) hint.classList.add('hide'); }
-
-  var isDown=false,startX=0,startScroll=0,moved=0;
-  canvas.addEventListener('pointerdown',function(e){
-    isDown=true; moved=0; startX=e.clientX; startScroll=canvas.scrollLeft;
-    canvas.classList.add('grabbing');
-    try{canvas.setPointerCapture(e.pointerId);}catch(err){}
-  });
-  canvas.addEventListener('pointermove',function(e){
-    if(!isDown)return;
-    var dx=e.clientX-startX;
-    moved=Math.max(moved,Math.abs(dx));
-    canvas.scrollLeft=startScroll-dx;
-    hideHint();
-  });
-  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){
-    canvas.addEventListener(ev,function(){isDown=false;canvas.classList.remove('grabbing');});
-  });
-  canvas.addEventListener('click',function(e){
-    if(moved>6){ e.preventDefault(); e.stopPropagation(); }
-  },true);
-  canvas.addEventListener('scroll',hideHint);
-
-  if(resetBtn){
-    resetBtn.addEventListener('click',function(){
-      canvas.scrollTo({left:0,behavior:'smooth'});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
     });
-  }
-
-  window.addEventListener('resize',drawConnectors);
-  window.addEventListener('load',drawConnectors);
-  setTimeout(drawConnectors,50);
-  setTimeout(drawConnectors,400);
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  cards.forEach(function(c){io.observe(c)});
 })();
 (function(){
   var form=document.getElementById('contactForm');
