@@ -143,7 +143,7 @@ a{color:inherit;text-decoration:none}
 @media(prefers-reduced-motion:reduce){.pstack-card{transition:opacity .3s;transform:none!important}}
 
 /* whatsapp demo */
-.wa-frame{width:320px;height:260px;border-radius:14px;overflow:hidden;background:#E9E1D3;
+.wa-frame{width:250px;height:260px;border-radius:14px;overflow:hidden;background:#E9E1D3;
   border:1px solid var(--line2);box-shadow:0 14px 28px rgba(0,0,0,.4);display:flex;flex-direction:column}
 .wa-head{display:flex;align-items:center;gap:.55rem;padding:.55rem .7rem;background:#1F2C24;flex-shrink:0}
 .wa-av{width:24px;height:24px;border-radius:50%;background:var(--acc-ink);display:flex;align-items:center;
@@ -152,7 +152,9 @@ a{color:inherit;text-decoration:none}
 .wa-h-txt b{color:#F2EBE2;font-family:var(--sans);font-size:.72rem;font-weight:600}
 .wa-h-txt small{color:#A8C08A;font-family:var(--sans);font-size:.6rem}
 .wa-body{flex:1;padding:.6rem .55rem;display:flex;flex-direction:column;gap:.4rem;overflow-y:auto;
-  background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:11px 11px}
+  background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:11px 11px;
+  scrollbar-width:none}
+.wa-body::-webkit-scrollbar{display:none}
 .wa-msg{max-width:82%;padding:.4rem .55rem;border-radius:9px;font-family:var(--sans);font-size:.66rem;
   line-height:1.4;color:#2A2118;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,.08);
   animation:waIn .25s ease both}
