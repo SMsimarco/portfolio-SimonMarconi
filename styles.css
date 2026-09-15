@@ -158,6 +158,57 @@ a{color:inherit;text-decoration:none}
 @keyframes waDot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){.wa-msg{animation:none}.wa-typing i{animation:none;opacity:.7}}
 
+/* ── canvas (draggable flow, n8n-style) ── */
+.flow-canvas-wrap{position:relative;margin-top:1.6rem}
+.canvas-hint{position:absolute;top:-2.1rem;right:0;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.06em;color:var(--faint);transition:opacity .5s;pointer-events:none}
+.canvas-hint.hide{opacity:0}
+.flow-canvas{position:relative;height:400px;overflow-x:auto;overflow-y:hidden;border:1px solid var(--line);
+  border-radius:20px;background:var(--d1);
+  background-image:radial-gradient(var(--line2) 1px,transparent 1px);background-size:24px 24px;
+  cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.flow-canvas::-webkit-scrollbar{display:none}
+.flow-canvas.grabbing{cursor:grabbing;scroll-behavior:auto}
+.canvas-inner{position:relative;height:100%;display:inline-flex;align-items:center;gap:6rem;padding:0 3rem;
+  min-width:100%;box-sizing:border-box}
+.canvas-svg{position:absolute;top:0;left:0;pointer-events:none;overflow:visible}
+.canvas-svg path{fill:none;stroke:var(--line2);stroke-width:1.5}
+.canvas-svg path.live{stroke:var(--str);opacity:.5}
+.canvas-svg path.product{stroke:var(--acc-ink);opacity:.5}
+
+.cn{position:relative;flex:0 0 250px;width:250px;height:288px;background:var(--d1);border:1px solid var(--line);
+  border-radius:16px;padding:.85rem;display:flex;flex-direction:column;gap:.45rem;
+  text-decoration:none;color:inherit;transition:border-color .2s,background .2s;
+  --dy:0px;transform:translateY(var(--dy));cursor:pointer}
+.cn-b{--dy:52px}
+.cn:hover{border-color:var(--line2);background:var(--d2)}
+.cn.archived{border-style:dashed}
+.cn.archived:hover{border-style:solid}
+.cn-port{position:absolute;top:50%;width:6px;height:6px;border-radius:50%;background:var(--d1);
+  border:1.5px solid var(--line2);transform:translateY(-50%);z-index:1}
+.cn-port.l{left:-4px}
+.cn-port.r{right:-4px}
+.cn-thumb{width:100%;height:92px;border-radius:9px;overflow:hidden;background:var(--code);flex-shrink:0}
+.cn-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.cn-thumb img.logoimg{object-fit:contain;mix-blend-mode:lighten;padding:.45rem;box-sizing:border-box}
+.cn-top{display:flex;align-items:center;gap:.4rem;min-width:0}
+.cn-dot{width:6px;height:6px;border-radius:50%;background:var(--faint);flex-shrink:0}
+.cn.live .cn-dot{background:var(--str);box-shadow:0 0 0 3px rgba(168,192,138,.18)}
+.cn.product .cn-dot{background:var(--acc-ink);box-shadow:0 0 0 3px var(--glow)}
+.cn.archived .cn-dot{background:transparent;border:1px dashed var(--faint)}
+.cn-tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cn-title{font-family:var(--serif);font-weight:400;font-size:1.08rem;line-height:1.1}
+.cn-desc{font-size:.72rem;line-height:1.42;color:var(--soft);flex:1;overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.cn-tech{font-family:var(--mono);font-size:.56rem;color:var(--faint);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+
+.canvas-reset{position:absolute;bottom:.9rem;right:.9rem;z-index:2;width:32px;height:32px;border-radius:50%;
+  background:var(--d2);border:1px solid var(--line2);color:var(--soft);font-size:.9rem;cursor:pointer;
+  transition:.2s}
+.canvas-reset:hover{color:var(--fg);border-color:var(--acc-ink)}
+
 .port{position:absolute;top:2.15rem;left:-1.5rem;width:7px;height:7px;border-radius:50%;
   background:var(--d1);border:1.5px solid var(--line2)}
 
@@ -303,6 +354,10 @@ footer{background:var(--d0);padding:3rem 0;border-top:1px solid var(--line)}
   .wa-frame{width:100%;max-width:258px}
   .output{justify-self:start;transform:rotate(0deg)!important;margin-top:1rem;width:140px}
   .pinline,.pinhead{display:none}
+  .flow-canvas{height:330px}
+  .cn{width:210px;flex-basis:210px;height:258px}
+  .cn-b{--dy:34px}
+  .canvas-hint{display:none}
   .tlx{display:none}
   .art{grid-template-columns:1fr;gap:.5rem}
   .art .r{text-align:left}
