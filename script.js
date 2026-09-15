@@ -36,6 +36,7 @@
         var el=document.createElement('div');
         el.className='wa-msg '+m.w; el.textContent=m.t; body.appendChild(el);
       });
+      body.scrollTop=body.scrollHeight;
       return;
     }
     var i=0;
