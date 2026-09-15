@@ -145,6 +145,10 @@
       if(el.dataset.esPlaceholder===undefined) el.dataset.esPlaceholder=el.getAttribute('placeholder')||'';
       el.setAttribute('placeholder', lang==='en' ? el.dataset.enPlaceholder : el.dataset.esPlaceholder);
     });
+    document.querySelectorAll('[data-en-href]').forEach(function(el){
+      if(el.dataset.esHref===undefined) el.dataset.esHref=el.getAttribute('href')||'';
+      el.setAttribute('href', lang==='en' ? el.dataset.enHref : el.dataset.esHref);
+    });
     root.setAttribute('lang', lang);
     if(toggle) toggle.innerHTML = lang==='en' ? 'ES / <b>EN</b>' : '<b>ES</b> / EN';
     localStorage.setItem('lang', lang);
