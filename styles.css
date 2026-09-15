@@ -124,10 +124,10 @@ a{color:inherit;text-decoration:none}
 .c-fn{color:var(--code-fn)}
 
 /* ── compact project cards ── */
-.p-feature{background:var(--d1);border:1px solid var(--line);border-radius:20px;padding:1.7rem;
-  display:flex;gap:2.2rem;align-items:center;margin-bottom:1.25rem;transition:.2s}
+.p-feature{background:var(--d1);border:1px solid var(--line);border-radius:20px;padding:1.4rem;
+  display:flex;gap:2rem;align-items:center;margin-bottom:1.25rem;transition:.2s}
 .p-feature:hover{border-color:var(--line2);background:var(--d2)}
-.p-feature .codewin{flex:0 0 42%}
+.p-feature .codewin{flex:0 0 38%}
 .p-feature .pbody{flex:1;display:flex;flex-direction:column;gap:.8rem}
 
 .pgrid{display:grid;grid-template-columns:1fr;gap:1.25rem}
