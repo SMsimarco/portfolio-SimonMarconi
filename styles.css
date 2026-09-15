@@ -65,7 +65,7 @@ a{color:inherit;text-decoration:none}
 .chip:hover{border-color:var(--line2);color:var(--fg)}
 
 /* hero */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-img{position:absolute;inset:0;
   background:url(img/hero.webp) center 30%/cover no-repeat;
   background-color:var(--hero-c)}
@@ -75,11 +75,11 @@ a{color:inherit;text-decoration:none}
   background:linear-gradient(90deg,var(--d0) 8%,var(--hero-fade1) 42%,var(--hero-fade2) 100%)}
 .hero-note{position:absolute;right:2.5rem;bottom:1.8rem;max-width:15rem;text-align:right;
   font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);line-height:2;z-index:3}
-.hero-in{position:relative;z-index:2;width:100%;padding:7rem 0 5rem}
-.hero h1{font-family:var(--serif);font-size:clamp(3.8rem,9.8vw,8.4rem);line-height:.88;letter-spacing:-.025em}
-.hero .role{font-size:clamp(1.35rem,2.5vw,1.95rem);font-weight:500;margin-top:1.2rem}
-.hero .bio{margin-top:1.8rem;max-width:42ch;color:var(--soft)}
-.facts{display:flex;gap:3.6rem;margin:3rem 0 2.4rem;flex-wrap:wrap}
+.hero-in{position:relative;z-index:2;width:100%;padding:5rem 0 1rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,6.6vw,5.4rem);line-height:.9;letter-spacing:-.025em}
+.hero .role{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:500;margin-top:.5rem}
+.hero .bio{margin-top:.7rem;max-width:42ch;color:var(--soft)}
+.facts{display:flex;gap:3.6rem;margin:1.1rem 0 1rem;flex-wrap:wrap}
 .fact b{display:block;font-weight:500;font-size:1.02rem;margin-top:.4rem}
 
 /* bands */
