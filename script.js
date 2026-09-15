@@ -24,8 +24,7 @@
   var msgs=[
     {w:'bot',t:'¡Hola Simón! ¿En qué te puedo ayudar?'},
     {w:'user',t:'Quiero un turno para una limpieza dental mañana'},
-    {w:'bot',t:'Perfecto, dejame revisar la disponibilidad…'},
-    {w:'bot',t:'Tengo libres 09:45 · 10:30 · 11:15'},
+    {w:'bot',t:'Perfecto, dejame revisar la disponibilidad… Tengo libres 09:45 · 10:30 · 11:15'},
     {w:'user',t:'10:30 me viene perfecto'},
     {w:'bot',t:'✅ Turno creado. Te espero el 24/04 a las 10:30.'}
   ];
