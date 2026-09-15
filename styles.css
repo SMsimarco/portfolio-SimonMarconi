@@ -80,7 +80,7 @@ a{color:inherit;text-decoration:none}
 /* hero */
 .hero{position:relative;height:100vh;display:flex;align-items:flex-start;overflow:hidden}
 .hero-img{position:absolute;inset:0;
-  background:url(img/hero.webp) center 100%/auto 155% no-repeat;
+  background:url(img/hero.webp) center 100%/auto 145% no-repeat;
   background-color:var(--hero-c)}
 .hero-img::before{content:"";position:absolute;inset:0;
   background:radial-gradient(ellipse 55% 65% at 74% 42%,var(--hero-glow),transparent 68%)}
