@@ -130,18 +130,19 @@ a{color:inherit;text-decoration:none}
 .p-feature .codewin{flex:0 0 42%}
 .p-feature .pbody{flex:1;display:flex;flex-direction:column;gap:.8rem}
 
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.pgrid{display:grid;grid-template-columns:1fr;gap:1.25rem}
 .pcard{background:var(--d1);border:1px solid var(--line);border-radius:18px;padding:1.2rem;
-  display:flex;flex-direction:column;gap:.65rem;transition:.2s}
+  display:flex;gap:2rem;align-items:center;transition:.2s}
 .pcard:hover{border-color:var(--line2);background:var(--d2)}
 .pcard.archived{border-style:dashed}
 .pcard.archived:hover{border-style:solid}
+.pcard .codewin{flex:0 0 34%}
+.pcard .pbody{flex:1;display:flex;flex-direction:column;gap:.65rem;min-width:0}
 
 .ptag{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 .ptitle{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-.01em;font-size:1.35rem}
 .p-feature .ptitle{font-size:2.1rem}
 .pdesc{color:var(--soft);font-size:.9rem;line-height:1.55}
-.pgrid .pdesc{min-height:7rem}
 .pstats{display:flex;gap:1.6rem;flex-wrap:wrap}
 .pstats b{font-family:var(--serif);font-size:1.35rem;color:var(--acc-ink);display:block;line-height:1}
 .pstats span{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
@@ -255,6 +256,8 @@ footer{background:var(--d0);padding:3rem 0;border-top:1px solid var(--line)}
   .agent,.tl,.ent,.contact{grid-template-columns:1fr;gap:2.2rem}
   .p-feature{flex-direction:column;padding:1.4rem}
   .pgrid{grid-template-columns:1fr}
+  .pcard{flex-direction:column;align-items:stretch;padding:1.4rem}
+  .pcard .codewin{flex-basis:auto}
   .tlx{display:none}
   .art{grid-template-columns:1fr;gap:.5rem}
   .art .r{text-align:left}
