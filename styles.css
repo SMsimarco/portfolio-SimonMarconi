@@ -207,6 +207,8 @@ a{color:inherit;text-decoration:none}
 /* timeline */
 .tl{display:grid;grid-template-columns:15rem 1fr;gap:5rem;align-items:start}
 .tlx{position:sticky;top:7rem}
+#experiencia .shead{position:sticky;top:4.5rem;z-index:5;background:var(--d2);padding-bottom:1rem}
+#experiencia .tlx{top:13.7rem}
 .tlx ol{list-style:none;border-left:1px solid var(--line);margin-top:1.5rem}
 .tlx li{position:relative;padding:0 0 1.8rem 1.7rem}
 .tlx li::before{content:"";position:absolute;left:-4.5px;top:.6rem;width:8px;height:8px;border-radius:50%;
