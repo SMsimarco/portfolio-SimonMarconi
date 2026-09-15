@@ -286,6 +286,8 @@ footer{background:var(--d0);padding:3rem 0;border-top:1px solid var(--line)}
   .shead{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2.8rem}
   .agent,.tl,.ent,.contact{grid-template-columns:1fr;gap:2.2rem}
   .pstack-card,.pstack-card.featured{position:static;grid-template-columns:1fr;padding:1.4rem}
+  .card-top{gap:.5rem}
+  .award-inline{font-size:.56rem;padding:.32rem .7rem;white-space:normal;text-align:center;line-height:1.3}
   .wa-frame{width:100%;max-width:258px}
   .output{justify-self:start;transform:rotate(0deg)!important;margin-top:1rem;width:140px}
   .pinline,.pinhead{display:none}
