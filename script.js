@@ -19,6 +19,54 @@
   ents.forEach(function(e){io.observe(e)});
 })();
 (function(){
+  var body=document.getElementById('waBody'),demo=document.getElementById('waDemo');
+  if(!body||!demo)return;
+  var msgs=[
+    {w:'bot',t:'¡Hola Marco! 👋 Soy RecepIA, tu asistente virtual. ¿En qué te puedo ayudar?'},
+    {w:'user',t:'Quiero un turno para una limpieza dental mañana'},
+    {w:'bot',t:'Perfecto, dejame revisar la disponibilidad…'},
+    {w:'bot',t:'Tengo libres 09:45 · 10:30 · 11:15'},
+    {w:'user',t:'10:30 me viene perfecto'},
+    {w:'bot',t:'✅ Turno creado. Te espero el 24/04 a las 10:30.'}
+  ];
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function play(){
+    if(reduced){
+      msgs.forEach(function(m){
+        var el=document.createElement('div');
+        el.className='wa-msg '+m.w; el.textContent=m.t; body.appendChild(el);
+      });
+      return;
+    }
+    var i=0;
+    function step(){
+      if(i>=msgs.length)return;
+      var m=msgs[i];
+      var typ=document.createElement('div');
+      typ.className='wa-typing'; typ.innerHTML='<i></i><i></i><i></i>';
+      body.appendChild(typ); body.scrollTop=body.scrollHeight;
+      setTimeout(function(){
+        typ.remove();
+        var el=document.createElement('div');
+        el.className='wa-msg '+m.w; el.textContent=m.t; body.appendChild(el);
+        body.scrollTop=body.scrollHeight;
+        i++; setTimeout(step,i<msgs.length?450:0);
+      },650+Math.random()*350);
+    }
+    step();
+  }
+  if(!('IntersectionObserver' in window)){play();}
+  else{
+    var played=false;
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting&&!played){played=true;play();io.disconnect();}
+      });
+    },{threshold:.5});
+    io.observe(demo);
+  }
+})();
+(function(){
   var form=document.getElementById('contactForm');
   if(!form)return;
   form.addEventListener('submit',function(e){

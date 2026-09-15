@@ -131,7 +131,32 @@ a{color:inherit;text-decoration:none}
 .card:hover{border-color:var(--line2);background:var(--d2);transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,.35)}
 .node.archived .card{border-style:dashed}
 .node.archived .card:hover{border-style:solid}
-.node.featured .card{padding:1.7rem 1.9rem}
+.node.featured .card{padding:1.7rem 1.9rem;grid-template-columns:1fr 258px}
+
+/* whatsapp demo */
+.wa-frame{width:258px;height:280px;border-radius:14px;overflow:hidden;background:#E9E1D3;
+  border:1px solid var(--line2);box-shadow:0 14px 28px rgba(0,0,0,.4);display:flex;flex-direction:column}
+.wa-head{display:flex;align-items:center;gap:.55rem;padding:.55rem .7rem;background:#1F2C24;flex-shrink:0}
+.wa-av{width:24px;height:24px;border-radius:50%;background:var(--acc-ink);display:flex;align-items:center;
+  justify-content:center;font-size:.75rem;flex-shrink:0}
+.wa-h-txt{display:flex;flex-direction:column;line-height:1.2}
+.wa-h-txt b{color:#F2EBE2;font-family:var(--sans);font-size:.72rem;font-weight:600}
+.wa-h-txt small{color:#A8C08A;font-family:var(--sans);font-size:.6rem}
+.wa-body{flex:1;padding:.6rem .55rem;display:flex;flex-direction:column;gap:.4rem;overflow-y:auto;
+  background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:11px 11px}
+.wa-msg{max-width:82%;padding:.4rem .55rem;border-radius:9px;font-family:var(--sans);font-size:.66rem;
+  line-height:1.4;color:#2A2118;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,.08);
+  animation:waIn .25s ease both}
+.wa-msg.user{align-self:flex-end;background:#D9FDD3;border-bottom-right-radius:2px}
+.wa-msg.bot{align-self:flex-start;border-bottom-left-radius:2px}
+@keyframes waIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.wa-typing{align-self:flex-start;display:flex;gap:3px;padding:.5rem .65rem;background:#fff;
+  border-radius:9px;border-bottom-left-radius:2px;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.wa-typing i{width:5px;height:5px;border-radius:50%;background:#9a9186;animation:waDot 1s infinite ease-in-out}
+.wa-typing i:nth-child(2){animation-delay:.15s}
+.wa-typing i:nth-child(3){animation-delay:.3s}
+@keyframes waDot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){.wa-msg{animation:none}.wa-typing i{animation:none;opacity:.7}}
 
 .port{position:absolute;top:2.15rem;left:-1.5rem;width:7px;height:7px;border-radius:50%;
   background:var(--d1);border:1.5px solid var(--line2)}
@@ -274,7 +299,8 @@ footer{background:var(--d0);padding:3rem 0;border-top:1px solid var(--line)}
   .shead{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2.8rem}
   .agent,.tl,.ent,.contact{grid-template-columns:1fr;gap:2.2rem}
   .node{grid-template-columns:20px 1fr}
-  .card{grid-template-columns:1fr;padding:1.4rem}
+  .card,.node.featured .card{grid-template-columns:1fr;padding:1.4rem}
+  .wa-frame{width:100%;max-width:258px}
   .output{justify-self:start;transform:rotate(0deg)!important;margin-top:1rem;width:140px}
   .pinline,.pinhead{display:none}
   .tlx{display:none}
