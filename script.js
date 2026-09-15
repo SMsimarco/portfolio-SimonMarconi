@@ -81,16 +81,45 @@
   cards.forEach(function(c){io.observe(c)});
 })();
 (function(){
+  var WEB3FORMS_KEY='bfb6b7dc-a252-4226-a91d-0be83a3974c0';
   var form=document.getElementById('contactForm');
   if(!form)return;
+  var status=document.getElementById('formStatus');
+  function isEn(){ return document.documentElement.getAttribute('lang')==='en'; }
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var nombre=document.getElementById('n').value.trim();
     var email=document.getElementById('e').value.trim();
     var msg=document.getElementById('m').value.trim();
-    var subject='Contacto desde el portfolio - '+nombre;
-    var body='Nombre: '+nombre+'\nEmail: '+email+'\n\n'+msg;
-    window.location.href='mailto:ssimonmarconi@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    var btn=form.querySelector('button[type="submit"]');
+    var original=btn.textContent;
+    btn.disabled=true; btn.textContent=isEn()?'Sending…':'Enviando…';
+    if(status){ status.textContent=''; status.className='form-status'; }
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        access_key:WEB3FORMS_KEY,
+        subject:'Contacto desde el portfolio - '+nombre,
+        name:nombre,
+        email:email,
+        message:msg
+      })
+    }).then(function(r){ return r.json(); }).then(function(data){
+      btn.disabled=false; btn.textContent=original;
+      if(!data.success) throw new Error(data.message||'error');
+      form.reset();
+      if(status){
+        status.textContent=isEn()?"Message sent — I'll get back to you soon.":'Mensaje enviado, te respondo a la brevedad.';
+        status.className='form-status ok';
+      }
+    }).catch(function(){
+      btn.disabled=false; btn.textContent=original;
+      if(status){
+        status.textContent=isEn()?'Something went wrong — email me directly instead.':'Algo falló al enviar. Escribime directo por mail.';
+        status.className='form-status err';
+      }
+    });
   });
 })();
 (function(){
@@ -126,6 +155,20 @@
     });
   }
   applyLang(localStorage.getItem('lang') || 'es');
+})();
+(function(){
+  var btn=document.getElementById('navToggle'),menu=document.getElementById('mobileMenu');
+  if(!btn||!menu)return;
+  function close(){ btn.setAttribute('aria-expanded','false'); menu.classList.remove('open'); }
+  function open(){ btn.setAttribute('aria-expanded','true'); menu.classList.add('open'); }
+  btn.addEventListener('click',function(){
+    (btn.getAttribute('aria-expanded')==='true') ? close() : open();
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  document.addEventListener('click',function(e){
+    if(menu.classList.contains('open') && !menu.contains(e.target) && e.target!==btn && !btn.contains(e.target)) close();
+  });
 })();
 function openCert(imgId){
   var src=document.getElementById(imgId).getAttribute('src');

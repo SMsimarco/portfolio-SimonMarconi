@@ -46,7 +46,16 @@
       </button>
       <span class="lang" id="langToggle"><b>ES</b> / EN</span>
       <a class="pill" href="#contacto" data-en="Let's talk">Charlemos</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#proyectos" data-en="Projects">Proyectos</a>
+    <a href="#experiencia" data-en="Experience">Experiencia</a>
+    <a href="#stack">Stack</a>
+    <a href="#certificaciones" data-en="Certifications">Certificaciones</a>
   </div>
 </nav>
 
@@ -109,7 +118,7 @@
         </div>
         <div class="output" style="--tilt:2deg">
           <span class="pinline"></span><span class="pinhead"></span>
-          <div class="frame"><img src="img/dashboard-cenit.webp" alt="Dashboard del sistema CENIT: entradas del día, socios activos, hora pico y cuotas al día"></div>        </div>
+          <div class="frame"><img src="img/dashboard-cenit-480.webp" srcset="img/dashboard-cenit-480.webp 480w, img/dashboard-cenit.webp 1200w" sizes="(max-width:920px) 90vw, 250px" alt="Dashboard del sistema CENIT: entradas del día, socios activos, hora pico y cuotas al día"></div>        </div>
       </article>
 
       <article class="pstack-card" style="--i:2">
@@ -122,7 +131,7 @@
         </div>
         <div class="output" style="--tilt:-1.5deg">
           <span class="pinline"></span><span class="pinhead"></span>
-          <div class="frame"><img src="img/sagrada-catalogo.webp" alt="Sagrada en vivo: hero del sitio con vestido de fiesta y colección"></div>        </div>
+          <div class="frame"><img src="img/sagrada-catalogo-480.webp" srcset="img/sagrada-catalogo-480.webp 480w, img/sagrada-catalogo.webp 1200w" sizes="(max-width:920px) 90vw, 250px" alt="Sagrada en vivo: hero del sitio con vestido de fiesta y colección"></div>        </div>
       </article>
 
       <article class="pstack-card" style="--i:3">
@@ -135,7 +144,7 @@
         </div>
         <div class="output" style="--tilt:1.5deg">
           <span class="pinline"></span><span class="pinhead"></span>
-          <div class="frame"><img src="img/outbound-b2b.webp" alt="Outbound B2B: leads a Telegram, con QA gate que bloquea envíos con plantillas sin completar"></div>        </div>
+          <div class="frame"><img src="img/outbound-b2b-480.webp" srcset="img/outbound-b2b-480.webp 480w, img/outbound-b2b.webp 1200w" sizes="(max-width:920px) 90vw, 250px" alt="Outbound B2B: leads a Telegram, con QA gate que bloquea envíos con plantillas sin completar"></div>        </div>
       </article>
 
       <article class="pstack-card archived" style="--i:4">
@@ -152,7 +161,7 @@
         <div class="output" style="--tilt:2.5deg;filter:grayscale(.4) opacity(.8)">
           <span class="pinline"></span><span class="pinhead"></span>
           <img id="cert-img-viajemos" src="img/cert-viajemos-ecoemprende.webp" alt="Certificado de segundo puesto en Concurso EconEmprende 2026, categoría Idea/proyecto de negocio, para Viajemos" style="display:none">
-          <div class="frame"><img class="fit-contain" src="img/viajemos-pitch.webp" alt="Viajemos: encontrá tu viaje, compartí el camino — slide del pitch en EconEmprende 2026"></div>        </div>
+          <div class="frame"><img class="fit-contain" src="img/viajemos-pitch-480.webp" srcset="img/viajemos-pitch-480.webp 480w, img/viajemos-pitch.webp 1200w" sizes="(max-width:920px) 90vw, 250px" alt="Viajemos: encontrá tu viaje, compartí el camino — slide del pitch en EconEmprende 2026"></div>        </div>
       </article>
 
       <article class="pstack-card" style="--i:5">
@@ -165,7 +174,7 @@
         </div>
         <div class="output" style="--tilt:-2deg">
           <span class="pinline"></span><span class="pinhead"></span>
-          <div class="frame"><img class="logoimg" src="img/foco-logo.webp" alt="Foquito, el chatbot con IA de foco."></div>        </div>
+          <div class="frame"><img class="logoimg" src="img/foco-logo-480.webp" srcset="img/foco-logo-480.webp 480w, img/foco-logo.webp 887w" sizes="(max-width:920px) 90vw, 250px" alt="Foquito, el chatbot con IA de foco."></div>        </div>
       </article>
 
       <article class="pstack-card" style="--i:6">
@@ -178,7 +187,7 @@
         </div>
         <div class="output" style="--tilt:2deg">
           <span class="pinline"></span><span class="pinhead"></span>
-          <div class="frame"><img class="logoimg" src="img/Gastos-logo.png" alt="Gastos: tus finanzas al día"></div>        </div>
+          <div class="frame"><img class="logoimg" src="img/Gastos-logo-480.webp" srcset="img/Gastos-logo-480.webp 480w, img/Gastos-logo.png 1536w" sizes="(max-width:920px) 90vw, 250px" alt="Gastos: tus finanzas al día"></div>        </div>
       </article>
 
     </div>
@@ -265,7 +274,7 @@
       <img id="cert-img-guayerd" src="img/cert-guayerd.webp" alt="Certificado de Fundamentos de Data Analytics, Guayerd en colaboración con IBM SkillsBuild" style="display:none">
       <div class="cbody">
         <span class="issuer" data-en="Guayerd · in collaboration with IBM SkillsBuild">Guayerd · en colaboración con IBM SkillsBuild</span>
-        <h3 class="ser" data-en="Data Analytics Fundamentals">Fundamentos de Data Analytics</h3>
+        <h4 class="ser" data-en="Data Analytics Fundamentals">Fundamentos de Data Analytics</h4>
         <p class="desc" data-en="255 hours of coursework and practice. Power BI, SQL, and Excel applied to dashboards and reports. August – December 2024.">255 horas de cátedra y práctica. Power BI, SQL y Excel aplicados a paneles y reportes. Agosto – diciembre 2024.</p>
         <div class="row" style="margin-top:1.1rem">
           <button type="button" class="pill solid" onclick="openCert('cert-img-guayerd')" data-en="View certificate ↗">Ver certificado ↗</button>
@@ -345,6 +354,7 @@
         <div class="field"><label for="e">Email</label><input id="e" type="email" required></div>
         <div class="field"><label for="m" data-en="What do you need">Qué necesitás</label><textarea id="m" placeholder="Cargamos los pedidos a mano en una planilla y se nos pasan." data-en-placeholder="We load orders into a spreadsheet by hand and things slip through." required></textarea></div>
         <button type="submit" class="pill solid" data-en="Send message">Enviar mensaje</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
