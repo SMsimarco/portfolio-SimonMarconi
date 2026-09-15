@@ -174,6 +174,26 @@
     if(menu.classList.contains('open') && !menu.contains(e.target) && e.target!==btn && !btn.contains(e.target)) close();
   });
 })();
+(function(){
+  var toggles=document.querySelectorAll('.cv-toggle');
+  if(!toggles.length)return;
+  function closeAll(){
+    toggles.forEach(function(b){ b.setAttribute('aria-expanded','false'); b.nextElementSibling.classList.remove('open'); });
+  }
+  toggles.forEach(function(btn){
+    var menu=btn.nextElementSibling;
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=btn.getAttribute('aria-expanded')==='true';
+      closeAll();
+      if(!isOpen){ btn.setAttribute('aria-expanded','true'); menu.classList.add('open'); }
+    });
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeAll(); });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.cv-item')) closeAll();
+  });
+})();
 function openCert(imgId){
   var src=document.getElementById(imgId).getAttribute('src');
   document.getElementById('certModalImg').setAttribute('src',src);

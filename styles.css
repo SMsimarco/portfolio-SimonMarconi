@@ -284,10 +284,14 @@ a{color:inherit;text-decoration:none}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:start}
 .contact h2{font-family:var(--serif);font-size:clamp(2.5rem,4.8vw,3.8rem);line-height:1.02;max-width:14ch;margin-top:1rem}
 .contact .lead{color:var(--soft);margin-top:1.5rem;max-width:36ch}
-.cv-links{margin-top:1.6rem;display:flex;flex-direction:column;gap:.9rem}
-.cv-item{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.cv-item .issuer{font-size:.68rem}
-.cv-item .cert-link{margin-top:0}
+.cv-item{position:relative;display:inline-block}
+.cv-menu{display:none;position:absolute;top:calc(100% + .5rem);left:0;z-index:5;flex-direction:column;gap:.2rem;
+  background:var(--d1);border:1px solid var(--line2);border-radius:12px;padding:.5rem;min-width:9rem;
+  box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.cv-menu.open{display:flex}
+.cv-menu a{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--soft);
+  padding:.5rem .6rem;border-radius:7px}
+.cv-menu a:hover{color:var(--acc-ink);background:var(--d2)}
 .field{margin-bottom:1.2rem}
 .form-status{margin-top:.9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;min-height:1.1em}
 .form-status.ok{color:var(--str)}
