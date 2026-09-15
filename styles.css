@@ -284,6 +284,10 @@ a{color:inherit;text-decoration:none}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:start}
 .contact h2{font-family:var(--serif);font-size:clamp(2.5rem,4.8vw,3.8rem);line-height:1.02;max-width:14ch;margin-top:1rem}
 .contact .lead{color:var(--soft);margin-top:1.5rem;max-width:36ch}
+.cv-links{margin-top:1.6rem;display:flex;flex-direction:column;gap:.9rem}
+.cv-item{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.cv-item .issuer{font-size:.68rem}
+.cv-item .cert-link{margin-top:0}
 .field{margin-bottom:1.2rem}
 .form-status{margin-top:.9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;min-height:1.1em}
 .form-status.ok{color:var(--str)}
