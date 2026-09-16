@@ -321,6 +321,7 @@ footer{background:var(--d0);padding:3rem 0;border-top:1px solid var(--line)}
 
 @media(max-width:1000px){.stack{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:920px){
+  .hero-img{background-size:cover;background-position:center 55%}
   .wrap,.nav-in{padding-left:1.4rem;padding-right:1.4rem}
   .nlinks{display:none}
   .nav-toggle{display:flex}
