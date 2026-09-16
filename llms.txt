@@ -1,0 +1,6 @@
+# Simón Marconi
+
+Full Stack Developer & Automatización con IA, con base en Tandil, Argentina.
+Este sitio muestra proyectos en producción (RecepIA, Gimnasio CENIT, Sagrada, foco., Gastos por voz),
+trayectoria profesional y stack técnico (n8n, Claude API, Vapi.ai, React, Next.js, Supabase).
+Contacto: ssimonmarconi@gmail.com
