@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=10">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,6 +42,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#proyectos" data-en="Skip to content">Saltar al contenido</a>
 
 <nav class="nav">
   <div class="nav-in">
@@ -60,7 +61,7 @@
         <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
       </button>
-      <span class="lang" id="langToggle"><b>ES</b> / EN</span>
+      <button type="button" class="lang" id="langToggle" aria-label="Cambiar idioma"><b>ES</b> / EN</button>
       <a class="pill" href="#contacto" data-en="Let's talk">Charlemos</a>
       <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
@@ -145,7 +146,7 @@
           <h3 class="ptitle">Sagrada</h3>
           <p class="pdesc" data-en="E-commerce that replaced Instagram sales: catalog with an admin panel to manage products and photos, MercadoPago checkout, and its own shipping-rate engine (no dependency on Andreani's API). Live and processing real sales.">E-commerce que reemplazó las ventas por Instagram: catálogo con panel de administración para productos y fotos, checkout con MercadoPago y motor propio de tarifas de envío (sin depender de la API de Andreani). En producción, procesando ventas reales.</p>
           <p class="ptech">Next.js · MercadoPago · Supabase</p>
-          <div class="pactions"><a class="pill solid" href="https://sagradavestidos.com" data-en="View site">Ver sitio</a><a class="pill" href="https://github.com/SMsimarco/Sagrada" target="_blank" rel="noopener" data-en="View code">Ver código</a></div>
+          <div class="pactions"><a class="pill solid" href="https://sagradavestidos.com" target="_blank" rel="noopener" data-en="View site">Ver sitio</a><a class="pill" href="https://github.com/SMsimarco/Sagrada" target="_blank" rel="noopener" data-en="View code">Ver código</a></div>
         </div>
         <div class="output" style="--tilt:-1.5deg">
           <span class="pinline"></span><span class="pinhead"></span>
@@ -233,7 +234,8 @@
           <li><span class="yr">2026</span><span class="nm">Antic</span></li>
         </ol>
       </aside>
-      <div>
+      <div class="timeline-flow">
+        <div class="timeline-progress" aria-hidden="true"><span></span></div>
         <div class="ent">
           <div class="emeta"><span class="yr-big">2023</span><span class="range" data-en="Jan 2023 – Present">Ene. 2023 – actualidad</span><span class="loc">Tandil, AR</span><span class="type" data-en="Education">Formación</span></div>
           <div class="ebody"><h3 class="ser">UNICEN</h3><p class="pos" data-en="Associate's Degree in Software Development">Tecnicatura en Desarrollo de Aplicaciones Informáticas</p>
@@ -250,7 +252,7 @@
             <p class="txt" data-en="Program in collaboration with IBM SkillsBuild, 255 hours of coursework and practice: Power BI, SQL, and Excel applied to dashboards and reports.">Programa en colaboración con IBM SkillsBuild, 255 horas de cátedra y práctica: Power BI, SQL y Excel aplicados a paneles y reportes.</p></div>
         </div>
         <div class="ent">
-          <div class="emeta"><span class="yr-big">2025–26</span><span class="range" data-en="Dec 2025 – Mar 2026">Dic. 2025 – mar. 2026</span><span class="loc" data-en="Remote">Remoto</span><span class="type" data-en="Fixed-term contract">Contrato temporal</span></div>
+          <div class="emeta"><span class="yr-big">2025</span><span class="range" data-en="Dec 2025 – Mar 2026">Dic. 2025 – mar. 2026</span><span class="loc" data-en="Remote">Remoto</span><span class="type" data-en="Fixed-term contract">Contrato temporal</span></div>
           <div class="ebody"><h3 class="ser">Flowmingo AI</h3><p class="pos">AI Automation Consultant</p>
             <p class="txt" data-en="Designed and implemented AI automations for agency clients. Contract completed.">Diseño e implementación de automatizaciones con IA para clientes de la agencia. Contrato finalizado.</p></div>
         </div>
@@ -385,10 +387,17 @@
     </div>
     <div>
       <form id="contactForm">
-        <div class="field"><label for="n" data-en="Name">Nombre</label><input id="n" type="text" required></div>
-        <div class="field"><label for="e">Email</label><input id="e" type="email" required></div>
-        <div class="field"><label for="m" data-en="What do you need">Qué necesitás</label><textarea id="m" placeholder="Cargamos los pedidos a mano en una planilla y se nos pasan." data-en-placeholder="We load orders into a spreadsheet by hand and things slip through." required></textarea></div>
-        <button type="submit" class="pill solid" data-en="Send message">Enviar mensaje</button>
+        <div class="form-head">
+          <span class="mono" data-en="New inquiry">Nueva consulta</span>
+          <p data-en="Three details are enough to start.">Tres datos alcanzan para empezar.</p>
+        </div>
+        <div class="field" data-step="01"><label for="n" data-en="Name">Nombre</label><input id="n" name="name" type="text" autocomplete="name" placeholder="Tu nombre" data-en-placeholder="Your name" required></div>
+        <div class="field" data-step="02"><label for="e">Email</label><input id="e" name="email" type="email" inputmode="email" autocomplete="email" placeholder="vos@empresa.com" required></div>
+        <div class="field field-message" data-step="03"><label for="m" data-en="What do you need">Qué necesitás</label><textarea id="m" name="message" placeholder="Contame qué proceso querés mejorar o automatizar." data-en-placeholder="Tell me which process you want to improve or automate." required></textarea></div>
+        <div class="form-actions">
+          <button type="submit" class="pill solid" data-en="Send message">Enviar mensaje</button>
+          <span data-en="I usually reply within 24 hours.">Suelo responder dentro de las 24 h.</span>
+        </div>
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -398,7 +407,7 @@
 <footer>
   <div class="wrap foot">
     <span data-en="2026 / Simón Marconi / AI Automation">2026 / Simón Marconi / Automatización con IA</span>
-    <span><a href="https://github.com/SMsimarco" target="_blank" rel="noopener">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/simonmarco0" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span><a href="https://github.com/SMsimarco" target="_blank" rel="noopener">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/simonmarco0" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a href="#" data-en="Back to top ↑">Volver arriba ↑</a></span>
   </div>
 </footer>
 
@@ -411,6 +420,7 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=10"></script>
+<script type="module" src="enhancements.js?v=10"></script>
 </body>
 </html>
