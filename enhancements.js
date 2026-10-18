@@ -29,22 +29,6 @@ if (hero && finePointer && !reducedMotion) {
 
 /* Shared interaction layer */
 if (finePointer && !reducedMotion) {
-  document.querySelectorAll('.pstack-card').forEach((card) => {
-    card.addEventListener('pointermove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-      card.style.setProperty('--glow-x', `${x * 100}%`);
-      card.style.setProperty('--glow-y', `${y * 100}%`);
-      card.style.setProperty('--rx', `${(0.5 - y) * 1.25}deg`);
-      card.style.setProperty('--ry', `${(x - 0.5) * 1.25}deg`);
-    });
-    card.addEventListener('pointerleave', () => {
-      card.style.setProperty('--rx', '0deg');
-      card.style.setProperty('--ry', '0deg');
-    });
-  });
-
   document.querySelectorAll('.pill').forEach((button) => {
     button.addEventListener('pointermove', (event) => {
       const rect = button.getBoundingClientRect();
