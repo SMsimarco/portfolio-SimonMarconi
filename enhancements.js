@@ -92,7 +92,11 @@ if (contactStatus && contactForm) {
 const experienceEntries = document.querySelectorAll('#experiencia .ent');
 if ('IntersectionObserver' in window && !reducedMotion) {
   const logObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => entry.target.classList.toggle('log-active', entry.isIntersecting));
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('log-active');
+      logObserver.unobserve(entry.target);
+    });
   }, { threshold: .22, rootMargin: '-4% 0px -8%' });
   experienceEntries.forEach((entry) => logObserver.observe(entry));
 } else {
