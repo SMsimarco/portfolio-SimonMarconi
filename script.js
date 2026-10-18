@@ -39,10 +39,7 @@
     }
     var i=0;
     function step(){
-      if(i>=msgs.length){
-        setTimeout(function(){ body.innerHTML=''; i=0; step(); },3000);
-        return;
-      }
+      if(i>=msgs.length) return;
       var m=msgs[i];
       var typ=document.createElement('div');
       typ.className='wa-typing'; typ.innerHTML='<i></i><i></i><i></i>';
