@@ -101,7 +101,7 @@ if ('IntersectionObserver' in window) {
   observedSections.forEach((section) => sectionObserver.observe(section));
 }
 
-const revealItems = document.querySelectorAll('.shead, .pstack-card, #stack .cat, .cert-feature, .cert-row, #contacto .contact > div');
+const revealItems = document.querySelectorAll('.shead, .pstack-card, .stack-group, .cert-feature, .cert-row, #contacto .contact > div');
 revealItems.forEach((item) => item.classList.add('reveal-item'));
 
 document.querySelectorAll('.pstack-card').forEach((card) => {
@@ -212,5 +212,17 @@ if (finePointer && !reducedMotion) {
       section.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
       section.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
     }, { passive: true });
+  });
+
+  document.querySelectorAll('.stack-group').forEach((group) => {
+    group.addEventListener('pointermove', (event) => {
+      const rect = group.getBoundingClientRect();
+      group.style.setProperty('--stack-x', `${event.clientX - rect.left}px`);
+      group.style.setProperty('--stack-y', `${event.clientY - rect.top}px`);
+      group.style.setProperty('--stack-shift', `${((event.clientX - rect.left) / rect.width - .5) * 5}px`);
+    }, { passive: true });
+    group.addEventListener('pointerleave', () => {
+      group.style.setProperty('--stack-shift', '0px');
+    });
   });
 }
