@@ -1318,6 +1318,20 @@ footer{background:var(--d0);border-top:1px solid var(--line)}
 #contacto .contact h2{position:relative}
 #contacto .contact h2::after{content:"";display:block;width:clamp(4rem,10vw,8rem);height:2px;margin-top:1.4rem;background:var(--acc)}
 .contact-links{gap:.5rem}
+.contact-links .booking-link{position:relative;padding-left:2.2rem}
+.contact-links .booking-link::before{content:"";position:absolute;left:1rem;width:.48rem;height:.48rem;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px color-mix(in srgb,currentColor 12%,transparent);animation:bookingPulse 2.4s ease-in-out infinite}
+@keyframes bookingPulse{0%,100%{transform:scale(.8);opacity:.65}50%{transform:scale(1);opacity:1}}
+.contact-resources{gap:.45rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line2)}
+.contact-resources .pill{min-height:36px;padding:.5rem .8rem;border-color:transparent;color:var(--faint);font-size:.55rem}
+.contact-resources .pill:hover,.contact-resources .pill:focus-visible{color:var(--fg);border-color:var(--line2)}
+#contactForm{scroll-margin-top:5rem}
+.field-topic select{width:100%;min-width:0;padding:.25rem 2rem .25rem 0;border:0;border-radius:0;background:transparent;color:var(--fg);font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.45;cursor:pointer;appearance:none}
+.field-topic select:invalid{color:var(--faint)}
+.field-topic select option{background:var(--d1);color:var(--fg);font-family:var(--sans);font-size:1rem}
+.field-topic select:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+.field-topic::after{content:"";position:absolute;right:.4rem;top:50%;width:.5rem;height:.5rem;border-right:1px solid var(--acc);border-bottom:1px solid var(--acc);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+@media(max-width:600px){.contact-links{align-items:stretch}.contact-links>.pill{justify-content:center;text-align:center}.field-topic select{font-size:1.3rem}}
+@media(prefers-reduced-motion:reduce){.contact-links .booking-link::before{animation:none}}
 #contactForm{padding:2rem;border:1px solid var(--line2);background:color-mix(in srgb,var(--d1) 78%,transparent);box-shadow:0 32px 90px rgba(0,0,0,.14)}
 .form-head{padding-bottom:1.75rem}.field{padding-block:1.55rem}
 .field input,.field textarea{font-size:1.02rem}

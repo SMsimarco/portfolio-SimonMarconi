@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=30">
+<link rel="stylesheet" href="styles.css?v=31">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,7 +116,7 @@
           <h3 class="ptitle">RecepIA</h3>
           <p class="pdesc" data-en="Multi-tenant agent that answers via WhatsApp and phone calls with Vapi.ai, understands the request, and books the appointment on its own — by chat or by call. Running in clinics today.">Agente multi-inquilino que atiende por WhatsApp y contesta llamadas con Vapi.ai, entiende la consulta y agenda el turno solo, ya sea por chat o por llamada. Funcionando hoy en clínicas.</p>
           <p class="ptech">Vapi.ai · ElevenLabs · n8n · WhatsApp Business API · Supabase</p>
-          <div class="pactions"><a class="pill solid" href="https://cal.com/simon-marconi-c1nu1d/demo-recepia-15-min" target="_blank" rel="noopener" data-en="I'm interested">Me interesa</a><a class="pill" href="https://www.recepia.lat/" target="_blank" rel="noopener" data-en="View site">Ver sitio</a><a class="pill" href="https://github.com/SMsimarco/recepia-landing" target="_blank" rel="noopener" data-en="View code">Ver código</a></div>
+          <div class="pactions"><a class="pill solid" href="https://cal.com/simon-marconi-c1nu1d/demo-recepia-15-min" target="_blank" rel="noopener" data-en="Book a 15-min demo">Agendar demo · 15 min</a><a class="pill" href="https://www.recepia.lat/" target="_blank" rel="noopener" data-en="View site">Ver sitio</a><a class="pill" href="https://github.com/SMsimarco/recepia-landing" target="_blank" rel="noopener" data-en="View code">Ver código</a></div>
         </div>
         <div class="output wa-demo" id="waDemo">
           <span class="pinline"></span><span class="pinhead pinhead-live"></span>
@@ -366,8 +366,12 @@
     <div>
       <span class="mono" data-en="Contact">Contacto</span>
       <h2 class="ser" data-en="Tell me what part of your day goes to repetitive tasks.">Contame qué parte del día se te va en tareas repetidas.</h2>
-      <p class="lead" data-en="If there's something to automate, I'll tell you. If there isn't, I'll tell you that too. The first conversation is free and takes under half an hour.">Si hay algo para automatizar, te lo digo. Si no lo hay, también. La primera conversación no se cobra y no dura más de media hora.</p>
+      <p class="lead" data-en="Want to see RecepIA in action? Book a 15-minute demo. For a custom automation or digital product, tell me what you need and I'll reply with a concrete next step.">¿Querés ver RecepIA en acción? Agendá una demo de 15 minutos. Para una automatización o producto digital a medida, contame qué necesitás y te respondo con un próximo paso concreto.</p>
       <div class="row contact-links">
+        <a class="pill solid booking-link" href="https://cal.com/simon-marconi-c1nu1d/demo-recepia-15-min" target="_blank" rel="noopener" data-en="Book a RecepIA demo · 15 min">Agendar demo RecepIA · 15 min</a>
+        <a class="pill" href="#contactForm" data-en="Discuss my project">Consultar mi proyecto</a>
+      </div>
+      <div class="row contact-resources">
         <a class="pill" href="mailto:ssimonmarconi@gmail.com">Email</a>
         <div class="cv-item">
           <button type="button" class="pill cv-toggle" aria-expanded="false" data-en="Automation CV">CV Automatización</button>
@@ -388,14 +392,15 @@
     <div>
       <form id="contactForm">
         <div class="form-head">
-          <span class="mono" data-en="New inquiry">Nueva consulta</span>
-          <p data-en="Three details are enough to start.">Tres datos alcanzan para empezar.</p>
+          <span class="mono" data-en="Tell me about your project">Contame tu proyecto</span>
+          <p data-en="What do you need to solve? I'll reply with a clear next step.">¿Qué necesitás resolver? Te respondo con un próximo paso claro.</p>
         </div>
-        <div class="field" data-step="01"><label for="n" data-en="Name">Nombre</label><input id="n" name="name" type="text" autocomplete="name" placeholder="Tu nombre" data-en-placeholder="Your name" required></div>
-        <div class="field" data-step="02"><label for="e">Email</label><input id="e" name="email" type="email" inputmode="email" autocomplete="email" placeholder="vos@empresa.com" required></div>
-        <div class="field field-message" data-step="03"><label for="m" data-en="What do you need">Qué necesitás</label><textarea id="m" name="message" placeholder="Contame qué proceso querés mejorar o automatizar." data-en-placeholder="Tell me which process you want to improve or automate." required></textarea></div>
+        <div class="field field-topic" data-step="01"><label for="topic" data-en="I'm interested in">Me interesa</label><select id="topic" name="topic" required><option value="" disabled selected data-en="Choose an option">Elegí una opción</option><option value="Automatización a medida" data-en="Custom automation">Automatización a medida</option><option value="RecepIA" data-en="RecepIA">RecepIA</option><option value="Desarrollo web o sistema" data-en="Website or software development">Desarrollo web o sistema</option><option value="Otra consulta" data-en="Other inquiry">Otra consulta</option></select></div>
+        <div class="field" data-step="02"><label for="n" data-en="Name">Nombre</label><input id="n" name="name" type="text" autocomplete="name" placeholder="Tu nombre" data-en-placeholder="Your name" required></div>
+        <div class="field" data-step="03"><label for="e">Email</label><input id="e" name="email" type="email" inputmode="email" autocomplete="email" placeholder="vos@empresa.com" required></div>
+        <div class="field field-message" data-step="04"><label for="m" data-en="What do you need">Qué necesitás</label><textarea id="m" name="message" placeholder="Contame qué proceso querés mejorar o automatizar." data-en-placeholder="Tell me which process you want to improve or automate." required></textarea></div>
         <div class="form-actions">
-          <button type="submit" class="pill solid" data-en="Send message">Enviar mensaje</button>
+          <button type="submit" class="pill solid" data-en="Send inquiry">Enviar consulta</button>
           <span data-en="I usually reply within 24 hours.">Suelo responder dentro de las 24 h.</span>
         </div>
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -420,7 +425,7 @@
   </div>
 </div>
 
-<script src="script.js?v=30"></script>
-<script type="module" src="enhancements.js?v=30"></script>
+<script src="script.js?v=31"></script>
+<script type="module" src="enhancements.js?v=31"></script>
 </body>
 </html>

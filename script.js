@@ -89,6 +89,7 @@
     e.preventDefault();
     var nombre=document.getElementById('n').value.trim();
     var email=document.getElementById('e').value.trim();
+    var topic=document.getElementById('topic').value;
     var msg=document.getElementById('m').value.trim();
     var btn=form.querySelector('button[type="submit"]');
     var original=btn.textContent;
@@ -99,9 +100,10 @@
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({
         access_key:WEB3FORMS_KEY,
-        subject:'Contacto desde el portfolio - '+nombre,
+        subject:'Portfolio · '+topic+' - '+nombre,
         name:nombre,
         email:email,
+        topic:topic,
         message:msg
       })
     }).then(function(r){ return r.json(); }).then(function(data){
