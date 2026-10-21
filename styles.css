@@ -1409,6 +1409,7 @@ footer{padding-block:1.6rem}.foot{align-items:center}
 }
 
 /* Six category cards with vertical technology lists. */
+#stack .shead{min-height:0;align-content:end;margin-bottom:clamp(2rem,4vw,3.25rem)}
 #stack .stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;border:1px solid var(--line2);background:var(--line2);box-shadow:none}
 #stack .stack::before{display:none}
 #stack .stack .cat,#stack .stack .cat:nth-child(n){position:relative;display:block;min-width:0;min-height:275px;margin:0;padding:2rem clamp(1.3rem,2.5vw,2.5rem);border:0;border-radius:0;background:var(--d0);backdrop-filter:none;overflow:hidden;transform:none;transition:background .3s ease}
